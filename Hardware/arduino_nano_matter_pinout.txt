@@ -1,0 +1,36 @@
+
+
+Module:Arduino_Nano pin out
+
+Left Side (Pins 1–15, Antenna heading UP to USB-C)
+Pin 1: D0 / TX1 (Right next to the RF Antenna)
+Pin 2: D1 / RX1
+Pin 3: ~RST (Reset Input)
+Pin 4: GND (Ground)
+Pin 5: D2
+Pin 6: D3
+Pin 7: D4
+Pin 8: D5
+Pin 9: D6
+Pin 10: D7
+Pin 11: D8
+Pin 12: D9
+Pin 13: D10
+Pin 14: D11
+Pin 15: D12 (Top-left corner pin right next to the USB-C port)
+Right Side (Pins 16–30, USB-C heading DOWN to Antenna)
+Pin 16: D13 (Top-right corner pin right next to the USB-C port)
+Pin 17: +3.3V (Regulated Power Output)
+Pin 18: AREF (Analog Reference Reference)
+Pin 19: A0 (First Analog Input)
+Pin 20: A1
+Pin 21: A2
+Pin 22: A3
+Pin 23: A4 / SDA
+Pin 24: A5 / SCL
+Pin 25: A6
+Pin 26: A7
+Pin 27: +5V (Regulated 5V Output or USB Bus Power Input)
+Pin 28: NC
+Pin 29: GND (Ground 2)
+Pin 30: VIN (Unregulated Power Input, bottom-right across from Pin 1)
