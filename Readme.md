@@ -1,6 +1,6 @@
 # Matter-over-Thread 4-Channel Intelligent Relay Controller
 
-![Robot_Front](https://github.com/jerryok826/ardunio_matter_thread_relay/blob/main/Pictures/IMG_7559.jpeg)
+![Robot_Front](https://github.com/jerryok826/ardunio_matter_thread_relay/blob/main/Images/matter_thread_relay_1.jpeg)
 
 An industrial-grade, ultra-low-latency 4-Channel Relay Controller built using the **Arduino Nano Matter** (Silicon Labs MGM240S core). This project connects natively with Apple Home, Home Assistant, and other Matter ecosystems over a self-healing Thread mesh network.
 
