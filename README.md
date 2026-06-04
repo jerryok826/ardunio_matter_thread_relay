@@ -95,12 +95,3 @@ At the very top of the primary sketch file, uncomment the specific preprocessor 
    ```
 6. Keep your phone close to the hardware for the first 30 seconds. The initial handshake executes over Bluetooth Low Energy (BLE) before moving the board permanently to your home's **Thread Mesh Network**.
 
----
-
-## 📋 Custom PCB Manufacturing Failsafes
-
-When translating this project layout into your CAD editor (KiCad/EasyEDA), include these high-utility design practices:
-- **Forced Identity Shifts:** This firmware maps a customized `0xFFF2` Vendor ID and `0x8001` Product ID block to forcefully bypass the common iOS Bluetooth cache blacklisting traps that occur during early prototype drops.
-- **Print the Code:** Because the 11-digit passcode (`3497-0259-332`) is mathematically derived from these static software IDs, it will never mutate. Drop a permanent text string reading `MATTER CODE: 3497-0259-332` directly onto your board's top and bottom **white silkscreen mask layers** as an operational backup.
-- **Creepage Isolation slots:** Cut physical air slots completely through the FR4 PCB directly beneath your high-voltage relay trace paths to guarantee a safe creepage clearance gap between mains power lines and low-voltage logic traces.
-
