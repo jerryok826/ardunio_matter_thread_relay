@@ -2,6 +2,18 @@
 
 ![Robot_Front](https://github.com/jerryok826/ardunio_matter_thread_relay/blob/main/Images/relay_control_matter_thread.jpeg)
 
+---
+The board shown below is an Arduino Matter/Thread relay controller designed for use with an Apple HomeKit network. It uses an Arduino Nano Matter processor to control four onboard relays, which can be used to operate motors, lights, valves, or other electrical loads.
+
+Each relay can be controlled locally using the onboard pushbuttons, allowing users to manually enable or disable individual outputs. Through the Apple Home app on an iPhone, each relay can also be monitored and controlled remotely from anywhere with internet access.
+
+An integrated OLED display provides system status information, including Thread network signal strength. During initial setup, the display presents a QR code that can be scanned to quickly add the device to the Apple Home app.
+
+The board also includes an I²C Qwiic connector for attaching external sensors and peripherals. For example, a rain sensor could be connected to automatically disable irrigation valves during rainfall, helping conserve water and prevent overwatering.
+---
+Status: The board completely supports relay control. The I²C Qwiic connector is wried wrong. There are other phyicall placemts that need updatying. So the board will be turned.
+---
+
 An industrial-grade, ultra-low-latency 4-Channel Relay Controller built using the **Arduino Nano Matter** (Silicon Labs MGM240S core). This project connects natively with Apple Home, Home Assistant, and other Matter ecosystems over a self-healing Thread mesh network.
 
 Featuring an asynchronous hardware override architecture, non-blocking FreeRTOS thread watchdogs, and an integrated I2C OLED display that acts as a standalone **RF Survey & Walk-Testing Tool**, this project is designed for robust, long-term smart home panel automation.
