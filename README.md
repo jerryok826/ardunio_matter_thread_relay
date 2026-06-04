@@ -10,7 +10,7 @@ An integrated OLED display provides system status information, including Thread 
 
 The board also includes an I²C Qwiic connector for attaching external sensors and peripherals. For example, a rain sensor could be connected to automatically disable irrigation valves during rainfall, helping conserve water and prevent overwatering.
 
-Status: The board completely supports relay control. The I²C Qwiic connector is wired wrong. There are other physical placements that need updating. So the board will be turned.
+**Status:** The board completely supports relay control. The I²C Qwiic connector is wired wrong. There are other physical placements that need updating. So the board will be turned.
 
 An industrial-grade, ultra-low-latency 4-Channel Relay Controller built using the **Arduino Nano Matter** (Silicon Labs MGM240S core). This project connects natively with Apple Home, Home Assistant, and other Matter ecosystems over a self-healing Thread mesh network.
 
