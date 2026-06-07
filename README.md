@@ -2,6 +2,8 @@
 
 ![Robot_Front](https://github.com/jerryok826/ardunio_matter_thread_relay/blob/main/Images/relay_control_matter_thread.jpeg)
 
+![Robot_Front](https://github.com/jerryok826/ardunio_matter_thread_relay/blob/main/Images/qr_code.jpeg)
+
 The board shown below is an Arduino Matter/Thread relay controller designed for use with an Apple HomeKit network. It uses an Arduino Nano Matter processor to control four onboard relays, which can be used to operate motors, lights, valves, or other electrical loads.
 
 Each relay can be controlled locally using the onboard pushbuttons, allowing users to manually enable or disable individual outputs. Through the Apple Home app on an iPhone, each relay can also be monitored and controlled remotely from anywhere with internet access.
