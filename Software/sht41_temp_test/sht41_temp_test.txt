@@ -1,0 +1,55 @@
+
+// Arduino Nano Matter code to read an Temperature & Humidity Sensor(SHT41) sensor over I2C via the Qwiic connector and print data to the serial port."
+// To verfy the I2C Qwiic connection.
+
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_SHT4x.h>
+
+Adafruit_SHT4x sht4 = Adafruit_SHT4x();
+
+void setup() {
+  // Initialize Serial Monitor
+  Serial.begin(115200);
+  while (!Serial) {
+    delay(10); // Wait for serial port to connect
+  }
+
+  Serial.println("SHT41 Test - Nano Matter");
+
+  // Initialize the SHT4x sensor
+  if (!sht4.begin()) {
+    Serial.println("Couldn't find SHT4x sensor. Check your wiring!");
+    while (1) delay(1);
+  }
+
+  Serial.println("Found SHT4x sensor!");
+
+  // Set precision to High (you can also use SHT4X_MED_PRECISION or SHT4X_LOW_PRECISION)
+  sht4.setPrecision(SHT4X_HIGH_PRECISION);
+  
+  // Set heater to activate for testing
+  sht4.setHeater(SHT4X_NO_HEATER);
+}
+
+void loop() {
+  sensors_event_t humidity, temp;
+
+  // Get event with current sensor reading
+  sht4.getEvent(&humidity, &temp);
+
+  // Print temperature to Serial
+  Serial.print("Temperature: ");
+  Serial.print(temp.temperature);
+  Serial.println(" °C");
+
+  // Print humidity to Serial
+  Serial.print("Humidity:    ");
+  Serial.print(humidity.relative_humidity);
+  Serial.println(" %");
+
+  Serial.println("------------------------");
+
+  // Wait 1 second between readings
+  delay(1000);
+}
