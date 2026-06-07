@@ -1,0 +1,79 @@
+I wangt an ardunio code for a ardunio nano matter board that serial port displays SHT41 reading
+
+These are results for I want an arduino code for an arduino nano matter board that serial port displays SHT41 reading
+Search instead for I wangt an ardunio code for a ardunio nano matter board that serial port displays SHT41 reading
+AI Overview
+To read and display SHT41 sensor readings on the serial monitor using the Arduino Nano Matter, use the standard I2C bus (Wire) with the Adafruit SHT4x Library. Connect the sensor’s SDA to the board's A4 pin and SCL to A5 (or use the Qwiic/STEMMA QT connector). 
+
+Adafruit Learning System
+ +2
+Wiring Connections
+VIN / VCC: Connect to 3.3V or 5V
+GND: Connect to GND
+SDA: Connect to A4 (or SDA on the Qwiic connector)
+SCL: Connect to A5 (or SCL on the Qwiic connector) 
+
+Arduino
+ +3
+Arduino Code
+Open the Library Manager in your Arduino IDE, search for Adafruit SHT4x, and install it. Then flash the following sketch to your Nano Matter board: 
+cpp
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_SHT4x.h>
+
+Adafruit_SHT4x sht4 = Adafruit_SHT4x();
+
+void setup() {
+  // Initialize Serial Monitor
+  Serial.begin(115200);
+  while (!Serial) {
+    delay(10); // Wait for serial port to connect
+  }
+
+  Serial.println("SHT41 Test - Nano Matter");
+
+  // Initialize the SHT4x sensor
+  if (!sht4.begin()) {
+    Serial.println("Couldn't find SHT4x sensor. Check your wiring!");
+    while (1) delay(1);
+  }
+
+  Serial.println("Found SHT4x sensor!");
+
+  // Set precision to High (you can also use SHT4X_MED_PRECISION or SHT4X_LOW_PRECISION)
+  sht4.setPrecision(SHT4X_HIGH_PRECISION);
+  
+  // Set heater to activate for testing
+  sht4.setHeater(SHT4X_NO_HEATER);
+}
+
+void loop() {
+  sensors_event_t humidity, temp;
+
+  // Get event with current sensor reading
+  sht4.getEvent(&humidity, &temp);
+
+  // Print temperature to Serial
+  Serial.print("Temperature: ");
+  Serial.print(temp.temperature);
+  Serial.println(" °C");
+
+  // Print humidity to Serial
+  Serial.print("Humidity:    ");
+  Serial.print(humidity.relative_humidity);
+  Serial.println(" %");
+
+  Serial.println("------------------------");
+
+  // Wait 1 second between readings
+  delay(1000);
+}
+Use code with caution.
+If you are incorporating this sensor into a wider Arduino Nano Matter smart home project, let me know if you would like to:
+Add Matter protocol capabilities to broadcast these sensor readings to your home network (e.g., Google Home)
+Add a display (like an OLED screen) to read the sensor directly on your desk 
+
+YouTube
+·Silicon Labs
+ +1
